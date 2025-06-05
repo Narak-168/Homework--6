@@ -1,4 +1,4 @@
-4329
+4333
 84D:\test\typescript-manual\node_modules\tar\dist\commonjs\normalize-windows-path.d.ts133934741246495663 0
 77D:\test\typescript-manual\node_modules\@swc\helpers\esm\_iterable_to_array.js133934741246060372 0
 51D:\test\typescript-manual\node_modules\browserslist133934741243887416 1
@@ -30,13 +30,14 @@
 39D:\test\typescript-manual\src\router.ts133934741022548347 0
 65D:\test\typescript-manual\node_modules\tar\dist\esm\update.js.map133934741246230363 0
 100D:\test\typescript-manual\node_modules\@msgpackr-extract\msgpackr-extract-win32-x64\node.abi115.node133934741243322257 0
-30D:\test\typescript-manual\dist133935922920330239 1
+30D:\test\typescript-manual\dist133935928822860311 1
 79D:\test\typescript-manual\node_modules\node-gyp-build-optional-packages\LICENSE133934741242572541 0
 65D:\test\typescript-manual\node_modules\utility-types\package.json133934741243517415 0
+64D:\test\typescript-manual\dist\typescript-manual.49f24ef5.js.map133935923553539092 0
 70D:\test\typescript-manual\node_modules\caniuse-lite\data\regions\CR.js133934741245840466 0
 70D:\test\typescript-manual\node_modules\caniuse-lite\data\regions\DO.js133934741246924515 0
 77D:\test\typescript-manual\node_modules\tar\dist\commonjs\write-entry.d.ts.map133934741246300357 0
-36D:\test\typescript-manual\.gitignore133934741020523910 0
+36D:\test\typescript-manual\.gitignore133935926942197094 0
 90D:\test\typescript-manual\node_modules\@jridgewell\trace-mapping\dist\types\by-source.d.ts133934741243967424 0
 89D:\test\typescript-manual\node_modules\caniuse-lite\data\features\input-file-directory.js133934741247670193 0
 60D:\test\typescript-manual\node_modules\caniuse-lite\dist\lib133934741248783155 1
@@ -76,7 +77,7 @@
 82D:\test\typescript-manual\node_modules\@parcel\core\test\fixtures\invalid-distpath133934741246535654 1
 60D:\test\typescript-manual\node_modules\tar\dist\esm\index.js133934741244067420 0
 70D:\test\typescript-manual\node_modules\tar\dist\commonjs\read-entry.js133934741244906598 0
-40D:\test\typescript-manual\src\index.html133935922918890426 0
+40D:\test\typescript-manual\src\index.html133935928818697786 0
 49D:\test\typescript-manual\node_modules\color-name133934741243047226 1
 66D:\test\typescript-manual\node_modules\semver\internal\lrucache.js133934741244478800 0
 57D:\test\typescript-manual\node_modules\msgpackr\unpack.js133934741244668902 0
@@ -1827,7 +1828,7 @@
 56D:\test\typescript-manual\node_modules\jiti\package.json133934741244826608 0
 86D:\test\typescript-manual\node_modules\@swc\helpers\_\_class_private_field_destructure133934741246575657 1
 73D:\test\typescript-manual\node_modules\@swc\helpers\esm\_object_spread.js133934741246100368 0
-60D:\test\typescript-manual\dist\typescript-manual.34df32e0.js133935922357940276 0
+60D:\test\typescript-manual\dist\typescript-manual.34df32e0.js133935928822747031 0
 53D:\test\typescript-manual\node_modules\nanoid\LICENSE133934741242572541 0
 56D:\test\typescript-manual\node_modules\nanoid\non-secure133934741244558810 1
 58D:\test\typescript-manual\node_modules\nanoid\package.json133934741244358796 0
@@ -2363,6 +2364,7 @@
 80D:\test\typescript-manual\node_modules\caniuse-lite\data\features\eventsource.js133934741247089622 0
 63D:\test\typescript-manual\node_modules\escalade\sync\index.d.ts133934741243867420 0
 61D:\test\typescript-manual\node_modules\escalade\sync\index.js133934741243007223 0
+60D:\test\typescript-manual\dist\typescript-manual.49f24ef5.js133935923553496766 0
 63D:\test\typescript-manual\node_modules\enhanced-resolve\LICENSE133934741242585541 0
 64D:\test\typescript-manual\node_modules\@parcel\transformer-image133934741243647417 1
 68D:\test\typescript-manual\node_modules\enhanced-resolve\package.json133934741245046795 0
@@ -4323,8 +4325,10 @@
 50D:\test\typescript-manual\node_modules\.bin\semver133934741249467870 0
 54D:\test\typescript-manual\node_modules\.bin\semver.cmd133934741249467870 0
 70D:\test\typescript-manual\node_modules\.bin\update-browserslist-db.cmd133934741249467870 0
-41D:\test\typescript-manual\dist\index.html133935922920330239 0
-64D:\test\typescript-manual\dist\typescript-manual.34df32e0.js.map133935922357960246 0
-61D:\test\typescript-manual\dist\typescript-manual.61d3354a.css133935922920178227 0
-65D:\test\typescript-manual\dist\typescript-manual.61d3354a.css.map133935922920200263 0
+41D:\test\typescript-manual\dist\index.html133935928822860311 0
+64D:\test\typescript-manual\dist\typescript-manual.34df32e0.js.map133935928822830315 0
+61D:\test\typescript-manual\dist\typescript-manual.61d3354a.css133935928822777021 0
+65D:\test\typescript-manual\dist\typescript-manual.61d3354a.css.map133935928822830315 0
+61D:\test\typescript-manual\dist\typescript-manual.827aeb05.css133935923553491571 0
+65D:\test\typescript-manual\dist\typescript-manual.827aeb05.css.map133935923553539092 0
 64D:\test\typescript-manual\dist\typescript-manual.d4c5635f.js.map133935922920200263 0
