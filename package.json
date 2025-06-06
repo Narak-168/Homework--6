@@ -6,7 +6,7 @@
   "target": "dist/index.js",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "dev": "parcel src/index.html",
+    "dev": "parcel src/index.html --public-url ./",
     "build": "parcel build src/index.html --public-url ./"
   },
   "keywords": [],
