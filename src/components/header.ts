@@ -1,6 +1,6 @@
 /** @format */
 
-export function Header(): HTMLElement {
+export function renderHeader(): HTMLElement {
 	const header = document.createElement("header");
 	header.className = "bg-[#4f39f6] text-white";
 	header.innerHTML = `

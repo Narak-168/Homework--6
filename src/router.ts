@@ -6,6 +6,7 @@ import { renderContact } from "./pages/contact";
 import { renderHome } from "./pages/home";
 import { renderNotFound } from "./pages/notfound";
 import { renderService } from "./pages/service";
+import { ProductDetails } from "./pages/productDetails"; // Make sure this path is correct
 
 export function initRouter(): void {
 	window.addEventListener("popstate", renderRoute);
@@ -23,8 +24,16 @@ export function initRouter(): void {
 	renderRoute();
 }
 
-function renderRoute(): void {
+async function renderRoute(): Promise<void> {
 	const pathname = window.location.pathname;
+
+	// ✅ Handle dynamic route /product/:id
+	const productMatch = pathname.match(/^\/product\/(\d+)$/);
+	if (productMatch) {
+		const productId = parseInt(productMatch[1], 10);
+		await createLayout(() => ProductDetails(productId)); // Async supported
+		return;
+	}
 
 	let contentFn: () => HTMLElement;
 

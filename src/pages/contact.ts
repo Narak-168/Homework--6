@@ -7,7 +7,7 @@ export function renderContact(): HTMLElement {
 <section class="bg-gray-100">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900">Visit Our Location</h2>
+            <h2 class="text-3xl text-[#4f39f6] font-bold">Visit Our Location</h2>
             <p class="mt-4 text-lg text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
         <div class="mt-16 lg:mt-20">

@@ -8,7 +8,7 @@ export function renderAbout(): HTMLElement {
       <div class="flex flex-col gap-12 md:gap-16 lg:gap-24">
         <!-- Header section -->
         <div class="space-y-4 text-center">
-          <h2 class="text-base-content text-2xl font-semibold md:text-3xl lg:text-4xl">About Us</h2>
+          <h2 class="text-base-content text-3xl font-bold md:text-3xl lg:text-4xl text-[#4f39f6]">About Us</h2>
           <p class="text-base-content/80 text-xl">
             Our achievement story stands as a powerful testament to teamwork and perseverance. United, we have faced
             challenges, celebrated victories, and woven a narrative of growth and success.
@@ -160,6 +160,117 @@ export function renderAbout(): HTMLElement {
       </div>
     </div>
   </div>
+
+  <section class="text-[#4f39f6] body-font">
+  <div class="flex justify-center mt-10 text-3xl font-bold"> 
+    Why Us?
+  </div>
+  <div class="container px-5 py-12 mx-auto">
+    <div class="flex flex-wrap text-center justify-center">
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Latest Milling Machinery</h2>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Reasonable Rates</h2>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Time Efficiency</h2>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Expertise in Industry</h2>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- source https://github.com/spacemadev/elevate-free-tailwind-business-template/ -->
+<section id="our-team" class="bg-gray-100 py-32">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl text-[#4f39f6] font-bold text-center mb-8 text-primary">Meet Our Team</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/1.jpg" alt="Team Member 1" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">John Doe</h3>
+                <p class="text-gray-700">Role: Software Engineer</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/4.jpg" alt="Team Member 2" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Jane Smith</h3>
+                <p class="text-gray-700">Role: Graphic Designer</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/3.jpg" alt="Team Member 3" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Alex Johnson</h3>
+                <p class="text-gray-700">Role: Marketing Manager</p>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/2.jpg" alt="Team Member 4" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Peter Johnson</h3>
+                <p class="text-gray-700">Role: Seo specialist</p>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/5.jpg" alt="Team Member 5" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Emily Brown</h3>
+                <p class="text-gray-700">Role: UX Designer</p>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/6.jpg" alt="Team Member 6" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Michael Davis</h3>
+                <p class="text-gray-700">Role: Frontend Developer</p>
+            </div>
+
+            <!-- Team Member 7 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/7.jpg" alt="Team Member 7" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Sarah Johnson</h3>
+                <p class="text-gray-700">Role: Content Writer</p>
+            </div>
+
+            <!-- Team Member 8 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/8.jpg" alt="Team Member 8" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">David Wilson</h3>
+                <p class="text-gray-700">Role: Project Manager</p>
+            </div>
+        </div>
+    </div>
+</section>
                     
   `;
 	return div;

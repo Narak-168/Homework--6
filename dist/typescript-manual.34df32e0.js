@@ -682,6 +682,7 @@ var _contact = require("./pages/contact");
 var _home = require("./pages/home");
 var _notfound = require("./pages/notfound");
 var _service = require("./pages/service");
+var _productDetails = require("./pages/productDetails"); // Make sure this path is correct
 function initRouter() {
     window.addEventListener("popstate", renderRoute);
     document.addEventListener("click", (e)=>{
@@ -695,8 +696,15 @@ function initRouter() {
     });
     renderRoute();
 }
-function renderRoute() {
+async function renderRoute() {
     const pathname = window.location.pathname;
+    // ✅ Handle dynamic route /product/:id
+    const productMatch = pathname.match(/^\/product\/(\d+)$/);
+    if (productMatch) {
+        const productId = parseInt(productMatch[1], 10);
+        await (0, _layout.createLayout)(()=>(0, _productDetails.ProductDetails)(productId)); // Async supported
+        return;
+    }
     let contentFn;
     switch(pathname){
         case "/home":
@@ -718,26 +726,36 @@ function renderRoute() {
     (0, _layout.createLayout)(contentFn);
 }
 
-},{"./layout":"aUJjy","./pages/about":"d8csY","./pages/contact":"a0XsK","./pages/home":"l0Soh","./pages/notfound":"20OKX","./pages/service":"jAwlp","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"aUJjy":[function(require,module,exports,__globalThis) {
+},{"./layout":"aUJjy","./pages/about":"d8csY","./pages/contact":"a0XsK","./pages/home":"l0Soh","./pages/notfound":"20OKX","./pages/service":"jAwlp","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","./pages/productDetails":"bes00"}],"aUJjy":[function(require,module,exports,__globalThis) {
+/** @format */ // This function assumes you already have components for navbar and footer
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createLayout", ()=>createLayout);
-var _footer = require("./components/footer");
 var _header = require("./components/header");
-function createLayout(contentFn) {
-    const app = document.getElementById('app');
-    app.innerHTML = ''; // clear previous content
-    const header = (0, _header.Header)();
-    const content = contentFn();
-    const footer = (0, _footer.Footer)();
-    app.append(header, content, footer);
+var _footer = require("./components/footer");
+async function createLayout(contentFn) {
+    const app = document.getElementById("app");
+    app.innerHTML = "";
+    // Create layout containers
+    const layout = document.createElement("div");
+    // Render navbar
+    const navbar = (0, _header.renderHeader)();
+    layout.appendChild(navbar);
+    // Render page content
+    const content = await contentFn();
+    layout.appendChild(content);
+    // Render footer
+    const footer = (0, _footer.renderFooter)();
+    layout.appendChild(footer);
+    // Append layout to the app
+    app.appendChild(layout);
 }
 
 },{"./components/footer":"ddP1f","./components/header":"lAi08","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"ddP1f":[function(require,module,exports,__globalThis) {
 /** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Footer", ()=>Footer);
-function Footer() {
+parcelHelpers.export(exports, "renderFooter", ()=>renderFooter);
+function renderFooter() {
     const footer = document.createElement("footer");
     footer.className = "bg-white  flex justify-center items-center w-full ";
     footer.innerHTML = `
@@ -805,8 +823,8 @@ exports.export = function(dest, destName, get) {
 },{}],"lAi08":[function(require,module,exports,__globalThis) {
 /** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Header", ()=>Header);
-function Header() {
+parcelHelpers.export(exports, "renderHeader", ()=>renderHeader);
+function renderHeader() {
     const header = document.createElement("header");
     header.className = "bg-[#4f39f6] text-white";
     header.innerHTML = `
@@ -874,7 +892,7 @@ function renderAbout() {
       <div class="flex flex-col gap-12 md:gap-16 lg:gap-24">
         <!-- Header section -->
         <div class="space-y-4 text-center">
-          <h2 class="text-base-content text-2xl font-semibold md:text-3xl lg:text-4xl">About Us</h2>
+          <h2 class="text-base-content text-3xl font-bold md:text-3xl lg:text-4xl text-[#4f39f6]">About Us</h2>
           <p class="text-base-content/80 text-xl">
             Our achievement story stands as a powerful testament to teamwork and perseverance. United, we have faced
             challenges, celebrated victories, and woven a narrative of growth and success.
@@ -1026,6 +1044,117 @@ function renderAbout() {
       </div>
     </div>
   </div>
+
+  <section class="text-[#4f39f6] body-font">
+  <div class="flex justify-center mt-10 text-3xl font-bold"> 
+    Why Us?
+  </div>
+  <div class="container px-5 py-12 mx-auto">
+    <div class="flex flex-wrap text-center justify-center">
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Latest Milling Machinery</h2>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Reasonable Rates</h2>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Time Efficiency</h2>
+        </div>
+      </div>
+
+      <div class="p-4 md:w-1/4 sm:w-1/2">
+        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
+          <div class="flex justify-center">
+            <img src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp" class="w-32 mb-3">
+          </div>
+          <h2 class="title-font font-regular text-2xl text-gray-900">Expertise in Industry</h2>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- source https://github.com/spacemadev/elevate-free-tailwind-business-template/ -->
+<section id="our-team" class="bg-gray-100 py-32">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl text-[#4f39f6] font-bold text-center mb-8 text-primary">Meet Our Team</h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Team Member 1 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/1.jpg" alt="Team Member 1" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">John Doe</h3>
+                <p class="text-gray-700">Role: Software Engineer</p>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/4.jpg" alt="Team Member 2" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Jane Smith</h3>
+                <p class="text-gray-700">Role: Graphic Designer</p>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/3.jpg" alt="Team Member 3" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Alex Johnson</h3>
+                <p class="text-gray-700">Role: Marketing Manager</p>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/2.jpg" alt="Team Member 4" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Peter Johnson</h3>
+                <p class="text-gray-700">Role: Seo specialist</p>
+            </div>
+
+            <!-- Team Member 5 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/5.jpg" alt="Team Member 5" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Emily Brown</h3>
+                <p class="text-gray-700">Role: UX Designer</p>
+            </div>
+
+            <!-- Team Member 6 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/6.jpg" alt="Team Member 6" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Michael Davis</h3>
+                <p class="text-gray-700">Role: Frontend Developer</p>
+            </div>
+
+            <!-- Team Member 7 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/7.jpg" alt="Team Member 7" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">Sarah Johnson</h3>
+                <p class="text-gray-700">Role: Content Writer</p>
+            </div>
+
+            <!-- Team Member 8 -->
+            <div class="bg-white rounded-lg shadow-md p-6 my-6 text-center">
+                <img src="https://spacema-dev.com/elevate/assets/images/team/8.jpg" alt="Team Member 8" class="w-full rounded-full mb-4">
+                <h3 class="text-xl font-semibold mb-2">David Wilson</h3>
+                <p class="text-gray-700">Role: Project Manager</p>
+            </div>
+        </div>
+    </div>
+</section>
                     
   `;
     return div;
@@ -1042,7 +1171,7 @@ function renderContact() {
 <section class="bg-gray-100">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
-            <h2 class="text-3xl font-extrabold text-gray-900">Visit Our Location</h2>
+            <h2 class="text-3xl text-[#4f39f6] font-bold">Visit Our Location</h2>
             <p class="mt-4 text-lg text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
         </div>
         <div class="mt-16 lg:mt-20">
@@ -1280,7 +1409,7 @@ function renderService() {
     }
     // Set initial loading state
     div.innerHTML = `
-  
+
 <div role="status" class="max-w-sm p-4 border border-gray-200 rounded-sm shadow-sm animate-pulse md:p-6 dark:border-gray-700">
     <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded-sm dark:bg-gray-700">
         <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
@@ -1355,6 +1484,55 @@ function renderService() {
         }
     })();
     return div;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"bes00":[function(require,module,exports,__globalThis) {
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProductDetails", ()=>ProductDetails);
+async function ProductDetails(productId) {
+    const response = await fetch(`https://api.escuelajs.co/api/v1/products/${productId}`);
+    const product = await response.json();
+    const productDetails = document.createElement("div");
+    productDetails.className = "bg-gray-100 dark:bg-gray-800 py-8";
+    productDetails.innerHTML = `
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row -mx-4">
+            <div class="md:flex-1 px-4">
+                <div class="h-[460px] rounded-lg bg-gray-300 dark:bg-gray-700 mb-4">
+                    <img class="w-full h-full object-cover rounded" src="${product.images[0]}" alt="${product.title}">
+                </div>
+                <div class="flex -mx-2 mb-4">
+                    <div class="w-1/2 px-2">
+                        <button class="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">Add to Cart</button>
+                    </div>
+                    <div class="w-1/2 px-2">
+                        <button class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">Add to Wishlist</button>
+                    </div>
+                </div>
+            </div>
+            <div class="md:flex-1 px-4">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white mb-2">${product.title}</h2>
+                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">${product.description}</p>
+                <div class="flex mb-4">
+                    <div class="mr-4">
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Price:</span>
+                        <span class="text-gray-600 dark:text-gray-300">$${product.price}</span>
+                    </div>
+                    <div>
+                        <span class="font-bold text-gray-700 dark:text-gray-300">Availability:</span>
+                        <span class="text-gray-600 dark:text-gray-300">In Stock</span>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-bold text-gray-700 dark:text-gray-300">Product Description:</span>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">${product.description}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	`;
+    return productDetails;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["3dtlh","gH3Lb"], "gH3Lb", "parcelRequire1868", {})

@@ -1,6 +1,6 @@
 /** @format */
 
-export function Footer(): HTMLElement {
+export function renderFooter(): HTMLElement {
 	const footer = document.createElement("footer");
 	footer.className = "bg-white  flex justify-center items-center w-full ";
 	footer.innerHTML = `
