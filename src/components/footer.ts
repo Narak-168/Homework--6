@@ -1,84 +1,36 @@
+/** @format */
+
 export function Footer(): HTMLElement {
-  const footer = document.createElement('footer');
-  footer.className = 'bg-white dark:bg-gray-800 flex justify-center items-center w-full p-5';
-  footer.innerHTML = `
-    <div class="bg-white text-gray-700 border-t border-gray-200">
-  <div class="container mx-auto px-6 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <!-- Logo & Description -->
-      <div>
-        <h2 class="text-xl font-semibold flex items-center space-x-2">
-          <span class="text-blue-600 text-2xl">ES</span> <span>BAZAR</span>
-        </h2>
-        <p class="mt-2 text-sm text-gray-600">
-          Lorem ipsum dolor sit amet consectetur. Imperdiet aliquet faucibus malesuada vitae.
-        </p>
-        <p class="mt-2 text-sm text-gray-600">
-          <span class="font-semibold">(219) 555-0114</span>
-        </p>
-        <!-- Social Icons -->
-        <div class="flex space-x-3 mt-3">
-          <a href="#" class="text-blue-600"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-red-600"><i class="fab fa-reddit"></i></a>
-          <a href="#" class="text-green-500"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="text-pink-600"><i class="fab fa-pinterest"></i></a>
+	const footer = document.createElement("footer");
+	footer.className = "bg-white  flex justify-center items-center w-full ";
+	footer.innerHTML = `
+    <div class="bg-white">
+    <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
+        <div class="p-5">
+            <h3 class="font-bold text-xl text-indigo-600">Homework06</h3>
         </div>
-      </div>
-      
-      <!-- My Account -->
-      <div>
-        <h3 class="font-semibold mb-2">My Account</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="#" class="hover:text-blue-600">My Account</a></li>
-          <li><a href="#" class="hover:text-blue-600">Order History</a></li>
-          <li><a href="#" class="hover:text-blue-600">Shopping Cart</a></li>
-          <li><a href="#" class="hover:text-blue-600">Wishlist</a></li>
-        </ul>
-      </div>
-      
-      <!-- Help Section -->
-      <div>
-        <h3 class="font-semibold mb-2">Helps</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="#" class="hover:text-blue-600">Contact</a></li>
-          <li><a href="#" class="hover:text-blue-600">FAQs</a></li>
-          <li><a href="#" class="hover:text-blue-600">Terms & Condition</a></li>
-          <li><a href="#" class="hover:text-blue-600">Privacy Policy</a></li>
-        </ul>
-      </div>
-      
-      <!-- Categories -->
-      <div>
-        <h3 class="font-semibold mb-2">Categories</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="#" class="hover:text-blue-600">Printers</a></li>
-          <li><a href="#" class="hover:text-blue-600">Cartridge</a></li>
-          <li><a href="#" class="hover:text-blue-600">Ink</a></li>
-        </ul>
-      </div>
+        <div class="p-5">
+            <div class="text-sm uppercase text-indigo-600 font-bold">Resources</div>
+            <a class="my-3 block" href="/#">Documentation <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Tutorials <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
+        </div>
+        <div class="p-5">
+            <div class="text-sm uppercase text-indigo-600 font-bold">Support</div>
+            <a class="my-3 block" href="/#">Help Center <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Conditions <span class="text-teal-600 text-xs p-1"></span></a>
+        </div>
+        <div class="p-5">
+            <div class="text-sm uppercase text-indigo-600 font-bold">Contact us</div>
+            <a class="my-3 block" href="/#">XXX XXXX, Floor 4 San Francisco, CA
+                <span class="text-teal-600 text-xs p-1"></span></a><a class="my-3 block" href="/#">contact@company.com
+                <span class="text-teal-600 text-xs p-1"></span></a>
+        </div>
     </div>
-    
-    <!-- Payment and App Download -->
-    <div class="flex flex-col md:flex-row justify-between items-center mt-6">
-      <div class="flex space-x-2">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-v52tLnvL3FEjfxjPvZWbvUMYvVUtAm9R6A&s" alt="Google Play" class="h-10">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJgk5tpxJC_1CAnsXwo2VvBGyQGI-o5c1PJw&s" alt="App Store" class="h-10">
-      </div>
-      <div class="flex space-x-2 mt-4 md:mt-0">
-        <img src="https://www.logo.wine/a/logo/Apple_Pay/Apple_Pay-White-Dark-Background-Logo.wine.svg" alt="Apple Pay" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSynWEtLag--sQ4XlfTwHh9_DAnfcglW7C3iw&s" alt="Visa" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6mJsEDg1aR_JCFb3ohk2nCxjgSvkWnpmlKg&s" alt="Mastercard" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQveKfGcJ1tSEY8bLg52DxvVrFDJXmxXJgv1Q&s" alt="discover" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDS0zyuJdI4e7E1VGaNDAVtRn3fGTzr0PBOA&s" alt="Secure Payment" class="h-[30px] w-10 rounded-md">
-      </div>
-    </div>
-    
-    <!-- Copyright -->
-    <div class="text-center text-sm text-gray-500 mt-6 border-t pt-4">
-      ExpertSquad © 2025. All Rights Reserved.
-    </div>
-  </div>
 </div>
+
+
   `;
-  return footer;
+	return footer;
 }

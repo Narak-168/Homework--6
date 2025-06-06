@@ -673,7 +673,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 });
 
 },{"./router":"4wVP1"}],"4wVP1":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initRouter", ()=>initRouter);
 var _layout = require("./layout");
@@ -683,13 +683,13 @@ var _home = require("./pages/home");
 var _notfound = require("./pages/notfound");
 var _service = require("./pages/service");
 function initRouter() {
-    window.addEventListener('popstate', renderRoute);
-    document.addEventListener('click', (e)=>{
+    window.addEventListener("popstate", renderRoute);
+    document.addEventListener("click", (e)=>{
         const target = e.target;
-        if (target.tagName === 'A' && target.hasAttribute('data-link')) {
+        if (target.tagName === "A" && target.hasAttribute("data-link")) {
             e.preventDefault();
-            const href = target.getAttribute('href');
-            history.pushState(null, '', href);
+            const href = target.getAttribute("href");
+            history.pushState(null, "", href);
             renderRoute();
         }
     });
@@ -699,16 +699,16 @@ function renderRoute() {
     const pathname = window.location.pathname;
     let contentFn;
     switch(pathname){
-        case '/':
+        case "/home":
             contentFn = (0, _home.renderHome);
             break;
-        case '/about':
+        case "/about":
             contentFn = (0, _about.renderAbout);
             break;
-        case '/contact':
+        case "/contact":
             contentFn = (0, _contact.renderContact);
             break;
-        case '/service':
+        case "/service":
             contentFn = (0, _service.renderService);
             break;
         default:
@@ -734,90 +734,40 @@ function createLayout(contentFn) {
 }
 
 },{"./components/footer":"ddP1f","./components/header":"lAi08","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"ddP1f":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Footer", ()=>Footer);
 function Footer() {
-    const footer = document.createElement('footer');
-    footer.className = 'bg-white dark:bg-gray-800 flex justify-center items-center w-full p-5';
+    const footer = document.createElement("footer");
+    footer.className = "bg-white  flex justify-center items-center w-full ";
     footer.innerHTML = `
-    <div class="bg-white text-gray-700 border-t border-gray-200">
-  <div class="container mx-auto px-6 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <!-- Logo & Description -->
-      <div>
-        <h2 class="text-xl font-semibold flex items-center space-x-2">
-          <span class="text-blue-600 text-2xl">ES</span> <span>BAZAR</span>
-        </h2>
-        <p class="mt-2 text-sm text-gray-600">
-          Lorem ipsum dolor sit amet consectetur. Imperdiet aliquet faucibus malesuada vitae.
-        </p>
-        <p class="mt-2 text-sm text-gray-600">
-          <span class="font-semibold">(219) 555-0114</span>
-        </p>
-        <!-- Social Icons -->
-        <div class="flex space-x-3 mt-3">
-          <a href="#" class="text-blue-600"><i class="fab fa-facebook"></i></a>
-          <a href="#" class="text-red-600"><i class="fab fa-reddit"></i></a>
-          <a href="#" class="text-green-500"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="text-pink-600"><i class="fab fa-pinterest"></i></a>
+    <div class="bg-white">
+    <div class="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
+        <div class="p-5">
+            <h3 class="font-bold text-xl text-indigo-600">Homework06</h3>
         </div>
-      </div>
-      
-      <!-- My Account -->
-      <div>
-        <h3 class="font-semibold mb-2">My Account</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="#" class="hover:text-blue-600">My Account</a></li>
-          <li><a href="#" class="hover:text-blue-600">Order History</a></li>
-          <li><a href="#" class="hover:text-blue-600">Shopping Cart</a></li>
-          <li><a href="#" class="hover:text-blue-600">Wishlist</a></li>
-        </ul>
-      </div>
-      
-      <!-- Help Section -->
-      <div>
-        <h3 class="font-semibold mb-2">Helps</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="#" class="hover:text-blue-600">Contact</a></li>
-          <li><a href="#" class="hover:text-blue-600">FAQs</a></li>
-          <li><a href="#" class="hover:text-blue-600">Terms & Condition</a></li>
-          <li><a href="#" class="hover:text-blue-600">Privacy Policy</a></li>
-        </ul>
-      </div>
-      
-      <!-- Categories -->
-      <div>
-        <h3 class="font-semibold mb-2">Categories</h3>
-        <ul class="text-sm space-y-2">
-          <li><a href="#" class="hover:text-blue-600">Printers</a></li>
-          <li><a href="#" class="hover:text-blue-600">Cartridge</a></li>
-          <li><a href="#" class="hover:text-blue-600">Ink</a></li>
-        </ul>
-      </div>
+        <div class="p-5">
+            <div class="text-sm uppercase text-indigo-600 font-bold">Resources</div>
+            <a class="my-3 block" href="/#">Documentation <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Tutorials <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Support <span class="text-teal-600 text-xs p-1">New</span></a>
+        </div>
+        <div class="p-5">
+            <div class="text-sm uppercase text-indigo-600 font-bold">Support</div>
+            <a class="my-3 block" href="/#">Help Center <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Privacy Policy <span class="text-teal-600 text-xs p-1"></span></a><a
+                class="my-3 block" href="/#">Conditions <span class="text-teal-600 text-xs p-1"></span></a>
+        </div>
+        <div class="p-5">
+            <div class="text-sm uppercase text-indigo-600 font-bold">Contact us</div>
+            <a class="my-3 block" href="/#">XXX XXXX, Floor 4 San Francisco, CA
+                <span class="text-teal-600 text-xs p-1"></span></a><a class="my-3 block" href="/#">contact@company.com
+                <span class="text-teal-600 text-xs p-1"></span></a>
+        </div>
     </div>
-    
-    <!-- Payment and App Download -->
-    <div class="flex flex-col md:flex-row justify-between items-center mt-6">
-      <div class="flex space-x-2">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-v52tLnvL3FEjfxjPvZWbvUMYvVUtAm9R6A&s" alt="Google Play" class="h-10">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJgk5tpxJC_1CAnsXwo2VvBGyQGI-o5c1PJw&s" alt="App Store" class="h-10">
-      </div>
-      <div class="flex space-x-2 mt-4 md:mt-0">
-        <img src="https://www.logo.wine/a/logo/Apple_Pay/Apple_Pay-White-Dark-Background-Logo.wine.svg" alt="Apple Pay" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSynWEtLag--sQ4XlfTwHh9_DAnfcglW7C3iw&s" alt="Visa" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6mJsEDg1aR_JCFb3ohk2nCxjgSvkWnpmlKg&s" alt="Mastercard" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQveKfGcJ1tSEY8bLg52DxvVrFDJXmxXJgv1Q&s" alt="discover" class="h-[30px] w-10 rounded-md">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDS0zyuJdI4e7E1VGaNDAVtRn3fGTzr0PBOA&s" alt="Secure Payment" class="h-[30px] w-10 rounded-md">
-      </div>
-    </div>
-    
-    <!-- Copyright -->
-    <div class="text-center text-sm text-gray-500 mt-6 border-t pt-4">
-      ExpertSquad \xa9 2025. All Rights Reserved.
-    </div>
-  </div>
 </div>
+
+
   `;
     return footer;
 }
@@ -853,23 +803,24 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"lAi08":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Header", ()=>Header);
 function Header() {
-    const header = document.createElement('header');
-    header.className = 'bg-blue-900 text-white';
+    const header = document.createElement("header");
+    header.className = "bg-[#4f39f6] text-white";
     header.innerHTML = `
     <!-- Header Section -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div class="flex items-center justify-between">
                 <!-- Logo Section -->
                 <div class="flex-shrink-0">
-                    <a href="/" class="text-2xl font-bold">Tailwind </a>
+                    <a href="/" class="text-2xl font-bold">Homework06 </a>
                 </div>
 
                 <!-- Navigation Menu -->
                 <nav class="hidden md:flex space-x-10 text-lg">
+                    <a href="/home" data-link class="hover:text-gray-300 transition-all">Home</a>
                     <a href="/service" data-link class="hover:text-gray-300 transition-all">Services</a>
                     <a href="/about" data-link class="hover:text-gray-300 transition-all">About Us</a>
                     <a href="/contact" data-link class="hover:text-gray-300 transition-all">Contact</a>
@@ -877,7 +828,7 @@ function Header() {
 
                 <!-- Call-to-Action Button -->
                 <div class="hidden md:block">
-                    <a href="#contact" class="bg-yellow-500 hover:bg-yellow-400 text-black py-2 px-6 rounded-full text-lg transition-all">
+                    <a href="#contact" class="bg-white hover:bg-gray-300 text-[#4f39f6] py-2 px-6 rounded-full text-lg transition-all">
                         Get in Touch
                     </a>
                 </div>
@@ -903,366 +854,192 @@ function Header() {
     
   `;
     // Mobile Menu Toggle
-    const menuButton = header.querySelector('#menu-button');
-    const mobileMenu = header.querySelector('#mobile-menu');
-    if (menuButton && mobileMenu) menuButton.addEventListener('click', ()=>{
-        mobileMenu.classList.toggle('hidden');
+    const menuButton = header.querySelector("#menu-button");
+    const mobileMenu = header.querySelector("#mobile-menu");
+    if (menuButton && mobileMenu) menuButton.addEventListener("click", ()=>{
+        mobileMenu.classList.toggle("hidden");
     });
     return header;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"d8csY":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderAbout", ()=>renderAbout);
 function renderAbout() {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.innerHTML = `
-    <section class="overflow-hidden bg-white py-8 sm:py-16">
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-      <div class="lg:pr-8 lg:pt-4">
-        <div class="lg:max-w-lg">
-          <h2 class="text-base font-semibold leading-7 text-indigo-600">Produce faster</h2>
-          <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">An Enterprise API</p>
-          <p class="mt-6 text-lg leading-8 text-gray-600">We've built an API that allows you to scale your podcast
-            production workflow.
+   <div class="bg-gray-100 py-8 sm:py-16 lg:py-24">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col gap-12 md:gap-16 lg:gap-24">
+        <!-- Header section -->
+        <div class="space-y-4 text-center">
+          <h2 class="text-base-content text-2xl font-semibold md:text-3xl lg:text-4xl">About Us</h2>
+          <p class="text-base-content/80 text-xl">
+            Our achievement story stands as a powerful testament to teamwork and perseverance. United, we have faced
+            challenges, celebrated victories, and woven a narrative of growth and success.
           </p>
-          <dl class="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
-            <div class="relative pl-9">
-              <dt class="inline font-semibold text-gray-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                  fill="currentColor" aria-hidden="true" class="absolute left-1 top-1 h-5 w-5 text-indigo-600">
-                  <path
-                    d="M3.196 12.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 12.87z">
-                  </path>
-                  <path
-                    d="M3.196 8.87l-.825.483a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.758 0l7.25-4.25a.75.75 0 000-1.294l-.825-.484-5.666 3.322a2.25 2.25 0 01-2.276 0L3.196 8.87z">
-                  </path>
-                  <path
-                    d="M10.38 1.103a.75.75 0 00-.76 0l-7.25 4.25a.75.75 0 000 1.294l7.25 4.25a.75.75 0 00.76 0l7.25-4.25a.75.75 0 000-1.294l-7.25-4.25z">
-                  </path>
-                </svg>Template driven
-              </dt>
-              <dd class="inline">Inspired by Sendgrid, Mailchimp, and Postmark, we allow you to create and apply
-                templated content to your media.
-              </dd>
-            </div>
-            <div class="relative pl-9">
-              <dt class="inline font-semibold text-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
-                  class="absolute left-1 top-1 h-5 w-5 text-indigo-600">
-                  <path fill-rule="evenodd"
-                    d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                Simple, REST
-              </dt>
-              <dd class="inline">A simple REST API that allows you to create, generate, and manage your content.</dd>
-            </div>
-            <div class="relative pl-9">
-              <dt class="inline font-semibold text-gray-900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                  fill="currentColor" aria-hidden="true" class="absolute left-1 top-1 h-5 w-5 text-indigo-600">
-                  <path fill-rule="evenodd"
-                    d="M14.5 10a4.5 4.5 0 004.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 01-.493.11 3.01 3.01 0 01-1.618-1.616.455.455 0 01.11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 00-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 103.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8.096.007.193.01.291.01zM5 16a1 1 0 11-2 0 1 1 0 012 0z"
-                    clip-rule="evenodd"></path>
-                  <path
-                    d="M14.5 11.5c.173 0 .345-.007.514-.022l3.754 3.754a2.5 2.5 0 01-3.536 3.536l-4.41-4.41 2.172-2.607c.052-.063.147-.138.342-.196.202-.06.469-.087.777-.067.128.008.257.012.387.012zM6 4.586l2.33 2.33a.452.452 0 01-.08.09L6.8 8.214 4.586 6H3.309a.5.5 0 01-.447-.276l-1.7-3.402a.5.5 0 01.093-.577l.49-.49a.5.5 0 01.577-.094l3.402 1.7A.5.5 0 016 3.31v1.277z">
-                  </path>
-                </svg>Developer friendly </dt>
-              <dd class="inline">Documented and easy to use, we make it easy to integrate with your existing workflow.
-              </dd>
-            </div>
-          </dl>
-        </div>
-        <div class="mt-10 flex items-center gap-x-6">
-          <a href="#"
-            class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Start
-            for free
-          </a>
-          <a href="#" class="text-sm font-semibold leading-6 text-gray-700">Schedule a demo
-            <span aria-hidden="true">\u{2192}</span>
+          <a href="#" class="btn btn-primary btn-lg btn-gradient">
+            Read More
+            <span class="icon-[tabler--arrow-right] size-5 rtl:rotate-180"></span>
           </a>
         </div>
-      </div><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxjb21wdXRlcnxlbnwwfDB8fHwxNjkxODE2NjY3fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Product screenshot" class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0" width="2432" height="1442">
+
+        <!-- Video player and stats -->
+        <div class="relative mb-8 h-full w-full rounded-xl max-lg:space-y-6 sm:mb-16 lg:mb-24 lg:h-161">
+          <img
+            src="https://cdn.flyonui.com/fy-assets/blocks/marketing-ui/about/about-9.png"
+            class="h-full w-full rounded-xl object-cover"
+          />
+          <!-- Stats card overlapping the video section -->
+          <div
+            class="bg-base-100 border-base-content/20 rounded-box grid gap-10 border px-10 py-8 sm:max-lg:grid-cols-2 lg:absolute lg:-bottom-25 lg:left-1/2 lg:w-3/4 lg:-translate-x-1/2 lg:grid-cols-4 xl:w-max"
+          >
+            <!-- Stats items - Years of Experience -->
+            <div class="flex flex-col items-center justify-center gap-4">
+              <!-- Document icon SVG -->
+              <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.3013 1.6001H20.6159C22.7164 1.60007 24.4097 1.60004 25.7414 1.77213C27.1239 1.95079 28.2879 2.33299 29.2126 3.22162C30.137 4.11026 30.5346 5.22912 30.7206 6.55798C30.8996 7.8379 30.8996 9.4653 30.8996 11.4843V20.5043C30.8996 22.5233 30.8996 24.1507 30.7206 25.4307C30.5346 26.7595 30.137 27.8783 29.2126 28.767C28.2879 29.6556 27.1239 30.0378 25.7414 30.2164C24.4097 30.3886 22.7164 30.3886 20.6159 30.3886H6.01758V11.4843C6.01755 9.4653 6.01753 7.8379 6.19656 6.55798C6.38244 5.22912 6.78011 4.11026 7.70465 3.22162C8.62919 2.33299 9.79329 1.95079 11.1758 1.77213C12.5075 1.60004 14.2007 1.60007 16.3013 1.6001Z"
+                  fill="var(--color-primary)"
+                  fill-opacity="0.2"
+                />
+                <path
+                  d="M4.48162 6.80371C5.02138 6.67016 5.67024 6.66745 6.16962 6.69236C6.04966 7.95368 6.04968 9.54289 6.0497 11.5003V30.3849C5.95382 30.3779 5.86482 30.3676 5.77944 30.3531C3.8803 30.026 2.38587 28.0716 2.13584 25.5878C2.09949 25.2268 2.09955 24.8159 2.09962 24.2127L2.09963 10.9668C2.09963 9.20932 2.88685 7.19828 4.48162 6.80371Z"
+                  fill="var(--color-primary)"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.2452 8.01881C12.2602 8.01881 12.2751 8.01883 12.29 8.01883H15.3019C15.3168 8.01883 15.3317 8.01881 15.3467 8.01881C15.6139 8.01871 15.9028 8.0186 16.1466 8.05011C16.4323 8.08702 16.7972 8.18196 17.1042 8.47715C17.4114 8.77231 17.5101 9.12306 17.5485 9.39762C17.5813 9.63199 17.5812 9.90964 17.5812 10.1664C17.5812 10.1809 17.5812 10.1952 17.5812 10.2095V11.9308C17.5812 11.9451 17.5812 11.9595 17.5812 11.9739C17.5812 12.2307 17.5813 12.5083 17.5485 12.7427C17.5101 13.0173 17.4114 13.368 17.1042 13.6632C16.7972 13.9584 16.4323 14.0533 16.1466 14.0902C15.9028 14.1217 15.6139 14.1216 15.3467 14.1215C15.3317 14.1215 15.3168 14.1215 15.3019 14.1215H12.29C12.2751 14.1215 12.2602 14.1215 12.2452 14.1215C11.978 14.1216 11.6891 14.1217 11.4453 14.0902C11.1596 14.0533 10.7947 13.9584 10.4876 13.6632C10.1805 13.368 10.0817 13.0173 10.0433 12.7427C10.0105 12.5083 10.0107 12.2307 10.0108 11.9739C10.0108 11.9595 10.0108 11.9451 10.0108 11.9308V10.2095C10.0108 10.1952 10.0108 10.1808 10.0108 10.1664C10.0107 9.90964 10.0105 9.63199 10.0433 9.39762C10.0817 9.12306 10.1805 8.77231 10.4876 8.47715C10.7947 8.18196 11.1596 8.08702 11.4453 8.05011C11.6891 8.0186 11.978 8.01871 12.2452 8.01881Z"
+                  fill="var(--color-primary)"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M21.5312 9.06403C21.5312 8.45253 22.0469 7.95679 22.6833 7.95679H25.7553C26.3914 7.95679 26.9073 8.45253 26.9073 9.06403C26.9073 9.67555 26.3914 10.1713 25.7553 10.1713H22.6833C22.0469 10.1713 21.5312 9.67555 21.5312 9.06403Z"
+                  fill="var(--color-primary)"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M21.5312 13.0418C21.5312 12.4303 22.0469 11.9346 22.6833 11.9346H25.7553C26.3914 11.9346 26.9073 12.4303 26.9073 13.0418C26.9073 13.6533 26.3914 14.1491 25.7553 14.1491H22.6833C22.0469 14.1491 21.5312 13.6533 21.5312 13.0418Z"
+                  fill="var(--color-primary)"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.0107 18.947C10.0107 18.3355 10.5265 17.8398 11.1627 17.8398H25.7548C26.391 17.8398 26.9068 18.3355 26.9068 18.947C26.9068 19.5586 26.391 20.0542 25.7548 20.0542H11.1627C10.5265 20.0542 10.0107 19.5586 10.0107 18.947Z"
+                  fill="var(--color-primary)"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.0107 23.376C10.0107 22.7645 10.5265 22.2688 11.1627 22.2688H25.7548C26.391 22.2688 26.9068 22.7645 26.9068 23.376C26.9068 23.9875 26.391 24.4834 25.7548 24.4834H11.1627C10.5265 24.4834 10.0107 23.9875 10.0107 23.376Z"
+                  fill="var(--color-primary)"
+                />
+              </svg>
+              <div class="space-y-2 text-center">
+                <span class="text-primary text-[#4f39f6] text-3xl font-semibold">20+</span>
+                <p class="text-base-content/80">Years of Experience</p>
+              </div>
+            </div>
+
+            <!-- Stats items - Successful Projects -->
+            <div class="flex flex-col items-center justify-center gap-4">
+              <!-- Projects icon SVG -->
+              <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_10399_304346)">
+                  <path
+                    d="M12.8113 1.15372e-06H20.1892C20.5026 -1.66422e-05 20.7906 -3.29867e-05 21.0324 0.0167549C21.2924 0.0347947 21.5781 0.0758928 21.8684 0.19827C22.4957 0.462627 22.9941 0.969686 23.254 1.6079C23.3413 1.8225 23.3864 2.03462 23.4114 2.23597C24.1495 2.24587 24.7229 2.28333 25.2343 2.42272C27.1272 2.93882 28.606 4.44328 29.1132 6.36936C29.3008 7.08179 29.3005 7.91253 29.3002 9.12995V22.0352C29.3002 24.0706 29.3002 25.7114 29.1296 27.0016C28.9527 28.3414 28.574 29.4694 27.6935 30.3653C26.8128 31.2611 25.7042 31.6464 24.3876 31.8266C23.1192 32 21.5068 32 19.5061 32H13.4942C11.4937 32 9.88113 32 8.61289 31.8266C7.29617 31.6464 6.18751 31.2611 5.30698 30.3653C4.42647 29.4694 4.04775 28.3414 3.87073 27.0016C3.70021 25.7114 3.70025 24.0706 3.70026 22.0352L3.70023 9.12997C3.69985 7.91253 3.69957 7.08179 3.88719 6.36938C4.39444 4.44328 5.87309 2.93882 7.76615 2.42272C8.27749 2.28331 8.85085 2.24587 9.58897 2.23595C9.61397 2.03461 9.65919 1.8225 9.74655 1.6079C10.0064 0.969686 10.5047 0.462627 11.132 0.19827C11.4224 0.0758928 11.7081 0.0347947 11.968 0.0167549C12.2098 -3.29867e-05 12.4978 -1.66424e-05 12.8113 1.15372e-06Z"
+                    fill="var(--color-primary)"
+                    fill-opacity="0.2"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M11.7752 2.45764C11.8122 2.37007 11.8808 2.30026 11.9669 2.26265C11.9776 2.25986 12.0192 2.25079 12.1169 2.24401C12.2749 2.23303 12.4868 2.23242 12.8426 2.23242H20.1569C20.5128 2.23242 20.7246 2.23303 20.8827 2.24401C20.9804 2.25079 21.0219 2.25986 21.0326 2.26265C21.1187 2.30026 21.1873 2.37007 21.2243 2.45764C21.227 2.46858 21.236 2.51085 21.2427 2.61033C21.2534 2.77108 21.2541 2.98669 21.2541 3.34871C21.2541 3.71073 21.2534 3.92634 21.2427 4.08709C21.236 4.18655 21.227 4.22882 21.2243 4.23978C21.1873 4.32735 21.1187 4.39714 21.0326 4.43477C21.0219 4.43754 20.9804 4.44663 20.8827 4.45341C20.7246 4.46439 20.5128 4.46498 20.1569 4.46498H12.8426C12.4868 4.46498 12.2749 4.46439 12.1169 4.45341C12.0192 4.44663 11.9776 4.43754 11.9669 4.43477C11.8808 4.39714 11.8122 4.32735 11.7752 4.23978C11.7725 4.22884 11.7636 4.18657 11.7569 4.08709C11.7461 3.92634 11.7455 3.71073 11.7455 3.34871C11.7455 2.98669 11.7461 2.77108 11.7569 2.61033C11.7636 2.51085 11.7725 2.46858 11.7752 2.45764ZM10.2256 14.5218C10.2256 13.85 10.7604 13.3021 11.4242 13.3021H21.5753C22.2392 13.3021 22.774 13.85 22.774 14.5218C22.774 15.1937 22.2392 15.7416 21.5753 15.7416H11.4242C10.7604 15.7416 10.2256 15.1937 10.2256 14.5218ZM10.2256 20.4339C10.2256 19.7621 10.7604 19.2142 11.4242 19.2142H21.5753C22.2392 19.2142 22.774 19.7621 22.774 20.4339C22.774 21.1058 22.2392 21.6538 21.5753 21.6538H11.4242C10.7604 21.6538 10.2256 21.1058 10.2256 20.4339Z"
+                    fill="var(--color-primary)"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_10399_304346">
+                    <rect width="32" height="32" fill="white" transform="translate(0.5)" />
+                  </clipPath>
+                </defs>
+              </svg>
+              <div class="space-y-2 text-center">
+                <span class="text-primary text-[#4f39f6] text-3xl font-semibold">70+</span>
+                <p class="text-base-content/80">Successful Projects</p>
+              </div>
+            </div>
+
+            <!-- Stats items - Customer Reviews -->
+            <div class="flex flex-col items-center justify-center gap-4">
+              <!-- Star icon SVG -->
+              <svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.777 1.67693C16.2533 1.57449 16.7458 1.57449 17.2222 1.67693C18.2817 1.90485 18.9665 2.74077 19.5034 3.62363C20.0466 4.51691 20.6182 5.77322 21.3204 7.31653L21.354 7.39047C21.8278 8.43194 21.9406 8.62269 22.0806 8.74709C22.1351 8.79555 22.1942 8.83872 22.2567 8.87599C22.4175 8.97165 22.6326 9.02063 23.7626 9.15256L24.0393 9.18485C25.6289 9.37042 26.9233 9.5215 27.8889 9.74909C28.8418 9.97368 29.8001 10.339 30.3535 11.2077C30.6743 11.7112 30.8609 12.2895 30.8953 12.8867C30.9546 13.9171 30.3927 14.7797 29.7529 15.5254C29.1046 16.2811 28.1455 17.1694 26.9678 18.2604L26.9114 18.3126C26.0318 19.1275 25.8786 19.3041 25.8046 19.4838C25.7674 19.5735 25.7418 19.6676 25.7281 19.7638C25.7006 19.9563 25.7425 20.187 26.0849 21.3403L26.1554 21.5779C26.7015 23.4177 27.1446 24.9095 27.3318 26.0607C27.5162 27.1945 27.5286 28.4012 26.7162 29.3081C26.511 29.5374 26.2762 29.7382 26.0183 29.9052C24.9982 30.5655 23.8175 30.3583 22.7361 29.9918C21.6383 29.6195 20.2478 28.938 18.5329 28.0979L18.0074 27.8404C16.9332 27.314 16.7183 27.2383 16.5186 27.2367L16.4918 27.2369C16.2921 27.2399 16.0778 27.3175 15.0077 27.8524L14.5348 28.0889C12.8028 28.955 11.399 29.6567 10.2908 30.0417C9.20024 30.4206 8.00708 30.6382 6.97612 29.9683C6.73189 29.8095 6.5085 29.6206 6.31124 29.4055C5.4785 28.4982 5.48604 27.2772 5.669 26.1303C5.85492 24.9649 6.29999 23.4518 6.84917 21.5847L6.9213 21.3395C7.26031 20.1868 7.30159 19.9564 7.2737 19.7641C7.25984 19.6686 7.23421 19.5751 7.19741 19.486C7.1233 19.3067 6.97037 19.1302 6.0918 18.3164L6.03546 18.2641C4.85594 17.1715 3.89552 16.2819 3.24637 15.5251C2.60575 14.7783 2.04337 13.9142 2.10412 12.8823C2.13908 12.2881 2.32471 11.7128 2.64325 11.2114C3.1965 10.3407 4.15586 9.97445 5.1101 9.74941C6.07703 9.52136 7.37335 9.37005 8.96543 9.18421L9.23652 9.15256C10.3666 9.02063 10.5816 8.97165 10.7424 8.87599C10.805 8.83872 10.864 8.79555 10.9186 8.74709C11.0586 8.62269 11.1713 8.43194 11.6451 7.39047L11.6787 7.31666C12.3809 5.77328 12.9525 4.51693 13.4957 3.62363C14.0327 2.74077 14.7174 1.90485 15.777 1.67693Z"
+                  fill="var(--color-primary)"
+                  fill-opacity="0.2"
+                />
+              </svg>
+              <div class="space-y-2 text-center">
+                <span class="text-primary text-[#4f39f6] text-3xl font-semibold">500+</span>
+                <p class="text-base-content/80">Customer Reviews</p>
+              </div>
+            </div>
+
+            <!-- Stats items - Achieve Awards -->
+            <div class="flex flex-col items-center justify-center gap-4">
+              <!-- Award icon SVG -->
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M27.281 19.6648C27.281 25.5919 22.4545 30.3968 16.5004 30.3968C10.5464 30.3968 5.71973 25.5919 5.71973 19.6648C5.71973 13.7377 10.5464 8.93286 16.5004 8.93286C22.4545 8.93286 27.281 13.7377 27.281 19.6648Z"
+                  fill="var(--color-primary)"
+                  fill-opacity="0.2"
+                />
+                <path
+                  d="M18.4258 7.43527C21.1365 7.85461 23.5578 9.14535 25.3915 11.0108C25.4296 10.9537 25.4687 10.895 25.509 10.8344L29.9243 4.20274C30.6866 3.05788 31.0677 2.48546 30.8298 2.04424C30.5919 1.60303 29.9019 1.60303 28.5223 1.60303H25.8261C24.0082 1.60303 23.0992 1.60303 22.3397 2.02085C21.5802 2.43868 21.0965 3.20482 20.1291 4.73709L18.4258 7.43527Z"
+                  fill="var(--color-primary)"
+                />
+                <path
+                  d="M7.62681 10.992C9.46465 9.13024 11.8892 7.84429 14.6024 7.43093L11.9124 3.17007C11.2968 2.19487 10.2209 1.60303 9.0639 1.60303H2.94211C2.27136 1.60303 1.87047 2.34632 2.24102 2.90288L7.5218 10.8344C7.55772 10.8884 7.5927 10.9409 7.62681 10.992Z"
+                  fill="var(--color-primary)"
+                />
+                <path
+                  d="M16.5004 15.0288C16.2816 15.0288 16.1489 15.323 15.8836 15.9115L15.7868 16.126C15.4037 16.9757 15.2121 17.4005 14.8529 17.6631C14.4937 17.9257 14.0291 17.9804 13.1 18.0898L12.8713 18.1169C12.248 18.1901 11.9364 18.2269 11.869 18.4306C11.8016 18.6345 12.0304 18.8482 12.4879 19.2759L12.5667 19.3495C13.3016 20.0364 13.6691 20.3799 13.7949 20.8375C13.9208 21.2951 13.7803 21.777 13.4993 22.7409L13.3798 23.1509C13.1939 23.7885 13.101 24.1073 13.2717 24.2482C13.4425 24.389 13.7399 24.2389 14.3347 23.9389L14.9876 23.6095C15.7299 23.2351 16.101 23.0479 16.5012 23.0463C16.9013 23.0447 17.2741 23.2289 18.0194 23.5973L18.6711 23.9196C19.2644 24.2129 19.561 24.3596 19.7305 24.2181C19.8999 24.0769 19.8068 23.7604 19.6207 23.1276L19.5081 22.7449C19.2239 21.7793 19.0818 21.2964 19.2074 20.8375C19.333 20.3786 19.7015 20.0343 20.4383 19.3455L20.5129 19.2759C20.9705 18.8482 21.1991 18.6345 21.1317 18.4306C21.0644 18.2269 20.7527 18.1901 20.1295 18.1169L19.9009 18.0898C18.9717 17.9804 18.5071 17.9257 18.1479 17.6631C17.7887 17.4005 17.5972 16.9757 17.214 16.126L17.1172 15.9115C16.8519 15.323 16.7193 15.0288 16.5004 15.0288Z"
+                  fill="var(--color-primary)"
+                />
+              </svg>
+              <div class="space-y-2 text-center">
+                <span class="text-primary text-[#4f39f6] text-3xl font-semibold">25</span>
+                <p class="text-base-content/80">Achieve Awards</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
-<section id="new-features" class="py-8 bg-white sm:py-10 lg:py-16">
-  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <div class="text-center">
-      <h2 class="text-3xl font-bold leading-tight text-gray-900 sm:text-4xl xl:text-5xl">
-        Boost Your Productivity </h2>
-      <p class="mt-4 text-base leading-7 text-gray-600 sm:mt-8">
-        Enhance your workflow with advanced features
-      </p>
-    </div>
-    <div
-      class="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24">
-      <!-- Feature 1 -->
-      <div class="md:p-8 lg:p-14 flex flex-col justify-center items-center">
-        <div class="w-14 h-14 rounded-full bg-purple-200 flex justify-center items-center">
-          <i class="fa-solid fa-chart-column text-3xl text-gray-900"></i>
-        </div>
-        <h3 class="mt-12 text-xl font-bold text-gray-900">Advanced Analytics</h3>
-        <p class="mt-5 text-base text-gray-600">Track and analyze your data with powerful analytics tools. Gain valuable
-          insights for better decision-making.</p>
-      </div>
-
-      <!-- Feature 2 -->
-      <div class="md:p-8 lg:p-14 md:border-l md:border-gray-200 flex flex-col justify-center items-center">
-        <div class="w-14 h-14 rounded-full bg-teal-200 flex justify-center items-center">
-          <i class="fa-solid fa-truck-fast text-3xl text-gray-900"></i>
-        </div>
-        <h3 class="mt-12 text-xl font-bold text-gray-900">Fast Integration</h3>
-        <p class="mt-5 text-base text-gray-600">Seamlessly integrate with your existing tools and systems for a smooth
-          workflow experience.</p>
-      </div>
-
-      <!-- Feature 3 -->
-      <div class="md:p-8 lg:p-14 md:border-l md:border-gray-200 flex flex-col justify-center items-center">
-        <div class="w-14 h-14 rounded-full bg-yellow-200 flex justify-center items-center">
-          <i class="fa-solid fa-shield text-3xl text-gray-900"></i>
-        </div>
-        <h3 class="mt-12 text-xl font-bold text-gray-900">Security First</h3>
-        <p class="mt-5 text-base text-gray-600">Ensure the safety of your data with top-notch security features. Your
-          privacy is our priority.</p>
-      </div>
-
-      <!-- Feature 4 -->
-      <div class="md:p-8 lg:p-14 md:border-t md:border-gray-200 flex flex-col justify-center items-center">
-        <div class="w-14 h-14 rounded-full bg-red-200 flex justify-center items-center">
-          <i class="fa-solid fa-cloud text-3xl text-gray-900"></i>
-        </div>
-        <h3 class="mt-12 text-xl font-bold text-gray-900">Cloud Integration</h3>
-        <p class="mt-5 text-base text-gray-600">Access your data from anywhere with seamless cloud integration. Work
-          without boundaries.</p>
-      </div>
-
-      <!-- Feature 5 -->
-      <div class="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t flex flex-col justify-center items-center">
-        <div class="w-14 h-14 rounded-full bg-green-200 flex justify-center items-center">
-          <i class="fa-solid fa-pen-nib text-3xl text-gray-900"></i>
-        </div>
-        <h3 class="mt-12 text-xl font-bold text-gray-900">Task Management</h3>
-        <p class="mt-5 text-base text-gray-600">Organize your workflow with efficient task management features. Stay on
-          top of your projects effortlessly.</p>
-      </div>
-
-      <!-- Feature 6 -->
-      <div class="md:p-8 lg:p-14 md:border-l md:border-gray-200 md:border-t flex flex-col justify-center items-center">
-        <div class="w-14 h-14 rounded-full bg-orange-200 flex justify-center items-center">
-          <i class="fa-solid fa-bolt text-3xl text-gray-900"></i>
-        </div>
-        <h3 class="mt-12 text-xl font-bold text-gray-900">Performance Metrics</h3>
-        <p class="mt-5 text-base text-gray-600">Monitor and measure your performance with comprehensive metrics.
-          Optimize your processes for maximum efficiency.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="text-gray-700 body-font">
-  <div class="flex justify-center mt-10 text-4xl font-regular">
-    Why Us?
-  </div>
-  <div class="container px-5 py-12 mx-auto">
-    <div class="flex flex-wrap text-center justify-center">
-      <div class="p-4 md:w-1/4 sm:w-1/2">
-        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div class="flex justify-center">
-            <img src="https://image3.jdomni.in/banner/13062021/58/97/7C/E53960D1295621EFCB5B13F335_1623567851299.png?output-format=webp" class="w-32 mb-3">
-          </div>
-          <h2 class="title-font font-regular text-2xl text-gray-900">Latest Milling Machinery</h2>
-        </div>
-      </div>
-
-      <div class="p-4 md:w-1/4 sm:w-1/2">
-        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div class="flex justify-center">
-            <img src="https://image2.jdomni.in/banner/13062021/3E/57/E8/1D6E23DD7E12571705CAC761E7_1623567977295.png?output-format=webp" class="w-32 mb-3">
-          </div>
-          <h2 class="title-font font-regular text-2xl text-gray-900">Reasonable Rates</h2>
-        </div>
-      </div>
-
-      <div class="p-4 md:w-1/4 sm:w-1/2">
-        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div class="flex justify-center">
-            <img src="https://image3.jdomni.in/banner/13062021/16/7E/7E/5A9920439E52EF309F27B43EEB_1623568010437.png?output-format=webp" class="w-32 mb-3">
-          </div>
-          <h2 class="title-font font-regular text-2xl text-gray-900">Time Efficiency</h2>
-        </div>
-      </div>
-
-      <div class="p-4 md:w-1/4 sm:w-1/2">
-        <div class="px-4 py-6 transform transition duration-500 hover:scale-110">
-          <div class="flex justify-center">
-            <img src="https://image3.jdomni.in/banner/13062021/EB/99/EE/8B46027500E987A5142ECC1CE1_1623567959360.png?output-format=webp" class="w-32 mb-3">
-          </div>
-          <h2 class="title-font font-regular text-2xl text-gray-900">Expertise in Industry</h2>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="overflow-hidden">
- <div class="max-w-screen-xl 2xl:max-w-screen-3xl px-8 md:px-12 mx-auto py-12 lg:py-24 space-y-24 h-svh flex flex-col justify-center">
-  <div class="flex flex-col sm:flex-row mx-auto">
-   <!--- Starts component --> <a href="#_"> <img src="https://images.unsplash.com/photo-1530035415911-95194de4ebcc?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a><a href="#_"> <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?q=80&amp;w=2672&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D " class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a><a href="#_"> <img src="https://images.unsplash.com/photo-1586996292898-71f4036c4e07?q=80&amp;w=2670&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-xl  rotate-6 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a><a href="#_"> <img src="https://images.unsplash.com/photo-1522775417749-29284fb89f43?q=80&amp;w=2574&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-xl  -rotate-12 hover:rotate-0 duration-500 hover:-translate-y-12 h-full w-full object-cover hover:scale-150 transform origin-bottom" alt="#_"> </a>
-   <!--- Ends component -->
-  </div> <!-- Starts links to tutorial -->
-  <div class="pointer-events-none fixed inset-x-0 bottom-0 sm:flex sm:justify-center sm:px-6 sm:pb-5 lg:px-8">
-   <div class="pointer-events-auto flex w-full max-w-md divide-x divide-neutral-200 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
-    <div class="flex w-0 flex-1 items-center p-4">
-     <div class="w-full">
-      <p class="text-sm font-medium text-neutral-900">Tutorial</p>
-      <p class="mt-1 text-sm text-neutral-500">
-       How to create animated image cards with Tailwind CSS and Astrojs
-      </p>
-      <p class="mt-2 text-xs text-orange-500 underline"> <a href="https://lexingtonthemes.com">
-        by \xa9 Lexington Themes</a> </p>
-     </div>
-    </div>
-    <div class="flex">
-     <div class="flex flex-col divide-y divide-neutral-200">
-      <div class="flex h-0 flex-1"> <a target="_blank" href="https://lexingtonthemes.com/tutorials/how-to-create-animated-images-with-tailwind-css-and-astro-js/" type="button" class="flex w-full items-center justify-center rounded-none rounded-tr-lg border border-transparent px-4 py-3 text-sm font-medium text-orange-600 hover:text-orange-500 focus:z-10 focus:outline-none focus:ring-2 focus:ring-orange-500">Tutorial</a> </div>
-      <div class="flex h-0 flex-1"> <a target="_blank" href="https://github.com/UnwrappedDesign/lexington-tutorials/tree/main/src/pages/simplified-cards" class="flex w-full items-center justify-center rounded-none rounded-br-lg border border-transparent px-4 py-3 text-sm font-medium text-neutral-700 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-orange-500">Get the code</a> </div>
-     </div>
-    </div>
-   </div>
-  </div> <!-- Ends links to tutorial -->
- </div>
-</section>
                     
   `;
     return div;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"a0XsK":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderContact", ()=>renderContact);
 function renderContact() {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.innerHTML = `
     
-<section class="lg:flex lg:gap-5 py-10 lg:px-20 md:px-10 px-5 text-blue-950">
-        <div class="lg:w-1/2 lg:pb-0 pb-10">
-          <h2 class="text-[38px] font-bold mb-5">
-            Contact <span class="text-[#0074F2] ">Info</span>
-          </h2>
-          <p class='pb-5 lg:pr-20'>&quot;
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non nostrum, fugiat accusantium reiciendis magnam dolorem
-            
-            &quot;</p>
-          <div class="space-y-4">
-          
-            <div>
-              <h4 class="text-lg font-normal">Corporate Office:</h4>
-
-              <address class="flex items-start gap-1 pt-3">
-                <IoLocationOutline className='text-blue-500 text-2xl' />
-                : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non nostrum, fugiat accusantium reiciendis magnam dolorem
-            
-            &quot;
-              </address>
-            </div>
-            <div>
-              <h4 class="text-lg font-medium">Email</h4>
-              <p class="flex items-center gap-2  hover:underline">
-                <MdOutlineEmail class='text-blue-500' />: example@gmail.com
-              </p>
-            </div>
-            <div>
-              <h4 class="text-lg font-medium ">Contact</h4>
-              <p class="flex items-center gap-2"><FaPhoneAlt className='text-blue-500' />: +91 404******</p>
-            </div>
-          </div>
-        </div>
-        <div class='lg:w-1/2 flex flex-col text-blue-950 py-6 rounded-xl pt-16 lg:px-10  md:px-16 px-5 bg-slate-50 lg:pt-7'>
-            <h2 class="text-xl font-light text-blue-600 mb-6">
-                Have Questions? Contact Our Highway Consultancy Team
-            </h2>
-            <form class="space-y-2 w-full" onSubmit={handleSubmit}>
-                <div>
-                    <label
-                        htmlFor="username"
-                        class="block text-gray-600 font-semibold mb-1">
-                        Name <span class='text-red-500'>*</span>
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"       
-                        required
-                        class="w-full border-gray-300 rounded-xl px-4 py-1.5 text-gray-800 shadow-sm focus:outline-none"
-                    />
-                </div>
-                <div>
-                    <label
-                        htmlFor="mobile"
-                        class="block text-gray-600 font-semibold mb-1">
-                        Mobile Number <span class='text-red-500'>*</span>
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="tel"
-                        name="tel"
-                        placeholder="phone"
-                        required
-                        class="w-full border-gray-300 rounded-xl px-4 py-1.5 text-gray-800 shadow-sm focus:outline-none"
-                    />
-                </div>
-                <div>
-                    <label
-                        htmlFor="email"
-                        className="block text-gray-600 font-semibold mb-1">
-                        Email ID <span class='text-red-500'>*</span>
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="you@example.com"
-                        required
-                        class="w-full border-gray-300 rounded-xl px-4 py-1.5 text-gray-800 shadow-sm focus:outline-none"
-                    />
-                </div>
-                <div>
-                    <label
-                        htmlFor="subjects"
-                        class="block text-gray-600 font-semibold mb-1">
-                        Message
-                    </label>
-                     <input
-                        type="text"
-                        id="Message"
-                        name="Message"
-                        placeholder="Message"       
-                        required
-                        class="w-full border-gray-300 rounded-xl px-4 py-1.5 text-gray-800 shadow-sm focus:outline-none"
-                    />
-                   
-                </div>
-                <div class='flex justify-center'>
-                    <button
-                        type="submit"
-                        class="py-1 px-5 rounded-xl hover:text-blue-400 hover:border-blue-400 border-2  hover:bg-gray-50 cursor-pointer bg-blue-400 text-gray-50"
-                    >
-                        Submit
-                    </button>
-                </div>
-            </form>
-        </div>
-      </section>
-<section class="">
+<section class="bg-gray-100">
     <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
         <div class="max-w-2xl lg:max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-extrabold text-gray-900">Visit Our Location</h2>
@@ -1271,26 +1048,23 @@ function renderContact() {
         <div class="mt-16 lg:mt-20">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="rounded-lg overflow-hidden">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11672.945750644447!2d-122.42107853750231!3d37.7730507907087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858070cc2fbd55%3A0xa71491d736f62d5c!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1619524992238!5m2!1sen!2sus"
-                        width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.631478132764!2d104.8992118748306!3d11.578254588623558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310951e96d257a6f%3A0x6b66703c5fc0c7cc!2sScience%20and%20Technology%20Advanced%20Development%20Co.%2C%20Ltd.!5e0!3m2!1sen!2skh!4v1749200914071!5m2!1sen!2skh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div>
                     <div class="max-w-full mx-auto rounded-lg overflow-hidden">
                         <div class="px-6 py-4">
                             <h3 class="text-lg font-medium text-gray-900">Our Address</h3>
-                            <p class="mt-1 text-gray-600">123 Main St, San Francisco, CA 94105</p>
+                            <p class="mt-1 text-gray-600">St 562, Phnom Penh 12151</p>
                         </div>
                         <div class="border-t border-gray-200 px-6 py-4">
                             <h3 class="text-lg font-medium text-gray-900">Hours</h3>
-                            <p class="mt-1 text-gray-600">Monday - Friday: 9am - 5pm</p>
-                            <p class="mt-1 text-gray-600">Saturday: 10am - 4pm</p>
-                            <p class="mt-1 text-gray-600">Sunday: Closed</p>
+                            <p class="mt-1 text-gray-600">Monday - Friday: 8 am - 12 am and 1 pm - 9 pm</p>
+                            <p class="mt-1 text-gray-600">Saturday - Sunday: 8 am - 12 am and 1 pm - 9 pm</p>
                         </div>
                         <div class="border-t border-gray-200 px-6 py-4">
                             <h3 class="text-lg font-medium text-gray-900">Contact</h3>
                             <p class="mt-1 text-gray-600">Email: info@example.com</p>
-                            <p class="mt-1 text-gray-600">Phone: +1 23494 34993</p>
+                            <p class="mt-1 text-gray-600">Phone: +855 95 990 910</p>
                         </div>
                     </div>
                 </div>
@@ -1303,414 +1077,181 @@ function renderContact() {
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"l0Soh":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderHome", ()=>renderHome);
 function renderHome() {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.innerHTML = `
-    <section class=" w-full  bg-[#0A2025] py-9 px-8">
-      <div class="mx-auto flex  flex-col items-center lg:flex-row justify-center gap-10 py-40 max-w-[1440px] bg-no-repeat ">
-        <div class="w-[660px]  flex-col justify-center items-start gap-20 inline-flex">
-          <div class="self-stretch  flex-col justify-start items-start gap-5 flex">
-            <h1 class="self-stretch">
-              <span class="text-white text-5xl font-bold font-['Roboto']">Redefining Motion:</span><span class="text-[#3e9d26] text-5xl font-bold font-['Roboto']">The Future of Footwear is Here</span>
-            </h1>
-            <p class="self-stretch text-white text-xl font-normal font-['Roboto']">Experience unparalleled comfort and
-              innovative design with our state-of-the-art, futuristic sports shoes. Built for champions, designed for you.
-            </p>
-          </div>
-          <div class="justify-start items-center gap-5 inline-flex">
-            <div class="justify-start items-center gap-2.5 flex">
-              <p class="text-white text-sm font-normal font-['Roboto']">Step into the Future</p>
-              <div data-svg-wrapper="true" class="relative"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M20.7806 12.5306L14.0306 19.2806C13.8899 19.4213 13.699 19.5004 13.5 19.5004C13.301 19.5004 13.1101 19.4213 12.9694 19.2806C12.8286 19.1399 12.7496 18.949 12.7496 18.75C12.7496 18.551 12.8286 18.3601 12.9694 18.2194L18.4397 12.75H3.75C3.55109 12.75 3.36032 12.671 3.21967 12.5303C3.07902 12.3897 3 12.1989 3 12C3 11.8011 3.07902 11.6103 3.21967 11.4697C3.36032 11.329 3.55109 11.25 3.75 11.25H18.4397L12.9694 5.78061C12.8286 5.63988 12.7496 5.44901 12.7496 5.24999C12.7496 5.05097 12.8286 4.8601 12.9694 4.71936C13.1101 4.57863 13.301 4.49957 13.5 4.49957C13.699 4.49957 13.8899 4.57863 14.0306 4.71936L20.7806 11.4694C20.8504 11.539 20.9057 11.6217 20.9434 11.7128C20.9812 11.8038 21.0006 11.9014 21.0006 12C21.0006 12.0986 20.9812 12.1961 20.9434 12.2872C20.9057 12.3782 20.8504 12.461 20.7806 12.5306Z"
-                    fill="white"></path>
-                </svg></div>
-            </div>
-            <button class="px-8 py-2.5 bg-[#3e9d26] rounded-[10px] justify-center items-center gap-2.5 flex text-white text-sm font-semibold font-['Roboto']">Shop Now</button>
-          </div>
-        </div><img class="w-full max-w-[400px]" src="https://iili.io/338c9je.png" alt="">
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="w-[90%] m-auto mt-10 mb-10 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-laptop-code text-4xl"></i>
+    <!-- Hero Section -->
+    <div class="relative bg-gray-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-gray-100 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <div class="pt-10 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+                    <div class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                        <div class="sm:text-center lg:text-left">
+                            <h2 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                                <span class="block">New Collection</span>
+                                <span class="block text-[#4f39f6]">Spring 2025</span>
+                            </h2>
+                            <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                                Discover our latest arrivals for women and girls. Fresh styles for every occasion.
+                            </p>
+                            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                                <div class="rounded-md shadow">
+                                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#4f39f6] hover:bg-[#394cf6] md:py-4 md:text-lg md:px-10">
+                                        Shop Now
+                                    </a>
+                                </div>
+                                <div class="mt-3 sm:mt-0 sm:ml-3">
+                                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-[#4f39f6] bg-gray-200 hover:bg-gray-300 md:py-4 md:text-lg md:px-10">
+                                        View Lookbook
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">Web Development</h3>
-                    <p class="text-gray-600">Custom websites and web applications tailored to your business needs with modern technologies.</p>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-mobile-alt text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">Mobile Apps</h3>
-                    <p class="text-gray-600">iOS and Android applications designed for optimal performance and user experience.</p>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
-                    <div class="text-blue-600 mb-4">
-                        <i class="fas fa-cloud text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-4 text-gray-800">Cloud Solutions</h3>
-                    <p class="text-gray-600">Scalable cloud infrastructure and services to support your growing business needs.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="w-[90%] m-auto mt-10 mb-10 p-5">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">About Cyamunara</h2>
-                    <p class="text-gray-600 mb-4">Founded in 2015, Cyamunara has been at the forefront of digital transformation, helping businesses of all sizes navigate the complex world of technology.</p>
-                    <p class="text-gray-600 mb-6">Our team of experts combines technical expertise with business acumen to deliver solutions that drive real results.</p>
-                    <button class="bg-blue-700 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-800 transition duration-300">Read Our Story</button>
-                </div>
-                <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="Team working" class="rounded-lg shadow-lg w-full h-auto">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="mt-10 mb-10 bg-blue-700 text-white">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-6">
-                    <div class="text-4xl font-bold mb-2">150+</div>
-                    <div class="text-xl">Projects Completed</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold mb-2">50+</div>
-                    <div class="text-xl">Happy Clients</div>
-                </div>
-                <div class="p-6">
-                    <div class="text-4xl font-bold mb-2">12</div>
-                    <div class="text-xl">Awards Won</div>
-                </div>
-            </div>
-        </div>
-  </section>
-  <section id="testimonies" class="py-20 bg-slate-900">
-    <div class="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto">
-        <div class="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
-            <div class="mb-12 space-y-5 md:mb-16 md:text-center">
-                <div
-                    class="inline-block px-3 py-1 text-sm font-semibold text-indigo-100 rounded-lg md:text-center text-cn bg-[#202c47] bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
-                    Words from Others
-                </div>
-                <h1 class="mb-5 text-3xl font-semibold text-white md:text-center md:text-5xl">
-                    It's not just us.
-                </h1>
-                <p class="text-xl text-gray-100 md:text-center md:text-2xl">
-                    Here's what others have to say about us.
-                </p>
-            </div>
-        </div>
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-            <ul class="space-y-8">
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/kanyewest" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Kanye West</h3>
-                                        <p class="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Find God.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/tim_cook" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-                                        <p class="text-gray-500 text-md">CEO of Apple</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
-                                    fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
-                                    aliquam malesuada bibendum.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/kanyewest" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1276461929934942210/cqNhNk6v_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Kanye West</h3>
-                                        <p class="text-gray-500 text-md">Rapper &amp; Entrepreneur</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Find God.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/tim_cook" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-                                        <p class="text-gray-500 text-md">CEO of Apple</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
-                                    fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
-                                    aliquam malesuada bibendum.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-
-
-            <ul class="hidden space-y-8 sm:block">
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/paraga" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Parag Agrawal</h3>
-                                        <p class="text-gray-500 text-md">CEO of Twitter</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitae
-                                    semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
-                                    pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/tim_cook" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-                                        <p class="text-gray-500 text-md">CEO of Apple</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
-                                    fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
-                                    aliquam malesuada bibendum.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/paraga" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1375285353146327052/y6jeByyD_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Parag Agrawal</h3>
-                                        <p class="text-gray-500 text-md">CEO of Twitter</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Enim neque volutpat ac tincidunt vitae
-                                    semper. Mattis aliquam faucibus purus in massa tempor. Neque vitae tempus quam
-                                    pellentesque nec. Turpis cursus in hac habitasse platea dictumst.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/tim_cook" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1535420431766671360/Pwq-1eJc_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Tim Cook</h3>
-                                        <p class="text-gray-500 text-md">CEO of Apple</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Diam quis enim lobortis scelerisque
-                                    fermentum dui faucibus in ornare. Donec pretium vulputate sapien nec sagittis
-                                    aliquam malesuada bibendum.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-
-
-            <ul class="hidden space-y-8 lg:block">
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/satyanadella" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Satya Nadella</h3>
-                                        <p class="text-gray-500 text-md">CEO of Microsoft</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean et
-                                    tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam
-                                    eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/dan_schulman" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Dan Schulman</h3>
-                                        <p class="text-gray-500 text-md">CEO of PayPal</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam sem
-                                    et tortor consequat id. Enim sit amet venenatis urna cursus.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/satyanadella" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/1221837516816306177/_Ld4un5A_400x400.jpg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Satya Nadella</h3>
-                                        <p class="text-gray-500 text-md">CEO of Microsoft</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Tortor dignissim convallis aenean et
-                                    tortor at. At ultrices mi tempus imperdiet nulla malesuada. Id cursus metus aliquam
-                                    eleifend mi. Quis ipsum suspendisse ultrices gravida dictum fusce ut.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-                <li class="text-sm leading-6">
-                    <div class="relative group">
-                        <div
-                            class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
-                        </div><a href="https://twitter.com/dan_schulman" class="cursor-pointer">
-                            <div
-                                class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-800 ring-1 ring-gray-900/5">
-                                <div class="flex items-center space-x-4"><img
-                                        src="https://pbs.twimg.com/profile_images/516916920482672641/3jCeLgFb_400x400.jpeg"
-                                        class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman">
-                                    <div>
-                                        <h3 class="text-lg font-semibold text-white">Dan Schulman</h3>
-                                        <p class="text-gray-500 text-md">CEO of PayPal</p>
-                                    </div>
-                                </div>
-                                <p class="leading-normal text-gray-300 text-md">Quam pellentesque nec nam aliquam sem
-                                    et tortor consequat id. Enim sit amet venenatis urna cursus.</p>
-                            </div>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-
-
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Fashion model">
         </div>
     </div>
+
+    <!-- Categories Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">Shop by Category</h2>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <a href="#" class="group relative block bg-gray-100 rounded-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Women's clothing" class="w-full h-64 object-cover transition-opacity group-hover:opacity-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-4">
+                    <h3 class="text-xl font-semibold text-white">Women's Clothing</h3>
+                    <p class="mt-1 text-sm text-gray-300">Shop Now</p>
+                </div>
+            </a>
+            <a href="#" class="group relative block bg-gray-100 rounded-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80" alt="Girls' clothing" class="w-full h-64 object-cover transition-opacity group-hover:opacity-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-4">
+                    <h3 class="text-xl font-semibold text-white">Girls' Clothing</h3>
+                    <p class="mt-1 text-sm text-gray-300">Shop Now</p>
+                </div>
+            </a>
+            <a href="#" class="group relative block bg-gray-100 rounded-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80" alt="Women's shoes" class="w-full h-64 object-cover transition-opacity group-hover:opacity-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-4">
+                    <h3 class="text-xl font-semibold text-white">Women's Shoes</h3>
+                    <p class="mt-1 text-sm text-gray-300">Shop Now</p>
+                </div>
+            </a>
+            <a href="#" class="group relative block bg-gray-100 rounded-lg overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" alt="Girls' shoes" class="w-full h-64 object-cover transition-opacity group-hover:opacity-75">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-4">
+                    <h3 class="text-xl font-semibold text-white">Girls' Shoes</h3>
+                    <p class="mt-1 text-sm text-gray-300">Shop Now</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+   
+
+   
+
+    
+
+    
+
+    <div class="bg-gray-200 px-2 py-10">
+
+  <div id="features" class="mx-auto max-w-6xl">
+    <p class="text-center text-base font-semibold leading-7 text-primary-500">Features</p>
+    <h2 class="text-center font-display text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+      Writing has never been so easy
+    </h2>
+    <ul class="mt-16 grid grid-cols-1 gap-6 text-center text-slate-700 md:grid-cols-3">
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+
+        <img src="https://www.svgrepo.com/show/530438/ddos-protection.svg" alt="" class="mx-auto h-10 w-10">
+        <h3 class="my-3 font-display font-medium">Powered by ChatGPT</h3>
+        <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+          the cutting-edge language model that makes interactions a breeze. With its user-friendly interface,
+          effortlessly tap into the world of AI-generated text.
+        </p>
+
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+
+        <img src="https://www.svgrepo.com/show/530442/port-detection.svg"
+                alt="" class="mx-auto h-10 w-10">
+        <h3 class="my-3 font-display font-medium">Easy to use</h3>
+        <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+          Simply input your subject, click the generate button, and the result will appear in seconds just like
+          magick.
+        </p>
+
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <img src="https://www.svgrepo.com/show/530444/availability.svg" alt="" class="mx-auto h-10 w-10">
+        <h3 class="my-3 font-display font-medium">Custom settings</h3>
+        <p class="mt-1.5 text-sm leading-6 text-secondary-500">
+          We offer advanced customization. You can freely combine options like roles, languages, publish, tones,
+          lengths,
+          and formats.
+        </p>
+
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <a href="/pricing" class="group">
+          <img src="https://www.svgrepo.com/show/530440/machine-vision.svg" alt="" class="mx-auto h-10 w-10">
+          <h3 class="my-3 font-display font-medium group-hover:text-primary-500">Free trial</h3>
+          <p class="mt-1.5 text-sm leading-6 text-secondary-500">We offer a free trial service without login. We
+            provide
+            many payment options including pay-as-you-go and subscription.</p>
+        </a>
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <a href="/templates" class="group">
+          <img src="https://www.svgrepo.com/show/530450/page-analysis.svg" alt="" class="mx-auto h-10 w-10">
+          <h3 class="my-3 font-display font-medium group-hover:text-primary-500">
+            90+ templates
+          </h3>
+          <p class="mt-1.5 text-sm leading-6 text-secondary-500">We offer many templates covering areas such as
+            writing,
+            education, lifestyle and creativity to inspire your potential. </p>
+        </a>
+      </li>
+      <li class="rounded-xl bg-white px-6 py-8 shadow-sm">
+        <a href="/download" class="group">
+          <img src="https://www.svgrepo.com/show/530453/mail-reception.svg" alt="" class="mx-auto h-10 w-10">
+          <h3 class="my-3 font-display font-medium group-hover:text-primary-500">Use Anywhere</h3>
+          <p class="mt-1.5 text-sm leading-6 text-secondary-500">Our product is compatible with multiple platforms
+            including Web, Chrome, Windows and Mac, you can use MagickPen anywhere.</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
   `;
     return div;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"20OKX":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderNotFound", ()=>renderNotFound);
 function renderNotFound() {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     div.innerHTML = `
     <section class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-gray-100">
         <div class="text-center animate-fadeIn">
             <img src="https://static.vecteezy.com/system/resources/thumbnails/022/310/933/small_2x/404-error-page-not-found-3d-illustration-png.png" alt="404 Illustration" class="mx-auto w-80 animate-[float_3s_infinite] shadow-xl rounded-lg">
-            <h1 class="text-7xl font-extrabold text-blue-700 mt-6">Looks Like You're Lost!</h1>
+            <h1 class="text-5xl font-extrabold text-blue-700 mt-6">You're not lost. I'm just lazy ;(</h1>
             <p class="text-xl text-gray-700 mt-2">We can't seem to find the page you're looking for.</p>
             <a href="/" class="mt-6 inline-block bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg transform transition hover:scale-105 hover:bg-blue-700">Return Home</a>
         </div>
@@ -1720,40 +1261,86 @@ function renderNotFound() {
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jAwlp":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+/** @format */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderService", ()=>renderService);
 function renderService() {
-    const div = document.createElement('div');
+    const div = document.createElement("div");
     async function fetchProducts() {
         try {
-            const response = await fetch('https://dummyjson.com/products');
-            if (!response.ok) throw new Error('Network response was not ok');
+            const response = await fetch(" https://api.escuelajs.co/api/v1/products");
+            if (!response.ok) throw new Error("Network response was not ok");
             const data = await response.json();
-            console.log('Fetched service data:', data);
-            return data.products;
+            console.log("Fetched service data:", data);
+            return data;
         } catch (error) {
-            console.error('Fetch error:', error);
+            console.error("Fetch error:", error);
             return [];
         }
     }
     // Set initial loading state
-    div.innerHTML = `<p>Loading services...</p>`;
+    div.innerHTML = `
+  
+<div role="status" class="max-w-sm p-4 border border-gray-200 rounded-sm shadow-sm animate-pulse md:p-6 dark:border-gray-700">
+    <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded-sm dark:bg-gray-700">
+        <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+            <path d="M14.066 0H7v5a2 2 0 0 1-2 2H0v11a1.97 1.97 0 0 0 1.934 2h12.132A1.97 1.97 0 0 0 16 18V2a1.97 1.97 0 0 0-1.934-2ZM10.5 6a1.5 1.5 0 1 1 0 2.999A1.5 1.5 0 0 1 10.5 6Zm2.221 10.515a1 1 0 0 1-.858.485h-8a1 1 0 0 1-.9-1.43L5.6 10.039a.978.978 0 0 1 .936-.57 1 1 0 0 1 .9.632l1.181 2.981.541-1a.945.945 0 0 1 .883-.522 1 1 0 0 1 .879.529l1.832 3.438a1 1 0 0 1-.031.988Z"/>
+            <path d="M5 5V.13a2.96 2.96 0 0 0-1.293.749L.879 3.707A2.98 2.98 0 0 0 .13 5H5Z"/>
+        </svg>
+    </div>
+    <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 mb-4"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700 mb-2.5"></div>
+    <div class="h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+    <div class="flex items-center mt-4">
+       <svg class="w-10 h-10 me-3 text-gray-200 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+        </svg>
+        <div>
+            <div class="h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-32 mb-2"></div>
+            <div class="w-48 h-2 bg-gray-200 rounded-full dark:bg-gray-700"></div>
+        </div>
+    </div>
+    <span class="sr-only">Loading...</span>
+</div>
+
+  `;
     function renderCards(products) {
-        console.log('Rendering products:', products);
+        console.log("Rendering products:", products);
         // Clear previous content and create a grid container
-        div.innerHTML = '';
-        const grid = document.createElement('div');
-        grid.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[90%] m-auto";
+        div.innerHTML = "";
+        const grid = document.createElement("div");
+        grid.className = "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-[90%] m-auto py-5";
         products.forEach((product)=>{
             console.log(product.description);
-            const card = document.createElement('div');
+            const card = document.createElement("div");
             card.innerHTML = `
-      <img src="${product.images[0]}" alt="${product.title}" width="300" height="300" />
-      <h2>${product.title}</h2>
-      <p>${product.description}</p>
-      <p>Price: $${product.price}</p>
-    `;
+<div class="w-full max-w-sm   border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 dark:bg-gray-500 dark:border-gray-700 overflow-hidden">
+    <a href="#" class="block overflow-hidden">
+        <img class="w-full h-56 object-cover transform hover:scale-105 transition-transform duration-300" src="${product.images[0]}" alt="${product.title}" />
+    </a>
+    <div class="px-6 py-4">
+        <h5 class="text-lg font-bold text-gray-900 dark:text-white truncate mb-2">${product.title}</h5>
+        <p class="text-sm text-gray-600 dark:text-gray-300 h-12 overflow-hidden line-clamp-1">${product.description.slice(0, 80)}</p>
+        <div class="flex items-center mt-4 mb-3">
+            <div class="flex space-x-1">
+                ${`\u{2605}`.repeat(4).split("").map(()=>`
+                    <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.563-.955L10 0l2.949 5.955 6.563.955-4.756 4.635 1.122 6.545z"/></svg>
+                `).join("")}
+                <svg class="w-4 h-4 text-gray-300 dark:text-gray-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.563-.955L10 0l2.949 5.955 6.563.955-4.756 4.635 1.122 6.545z"/></svg>
+            </div>
+            <span class="ml-2 text-sm bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full dark:bg-blue-200 dark:text-blue-900">4.0</span>
+        </div>
+        <div class="flex items-center justify-between">
+            <span class="text-xl font-bold text-gray-900 dark:text-white">$${product.price}</span>
+            <button class="relative inline-flex items-center justify-center p-2 px-4 overflow-hidden text-sm font-medium text-white rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 focus:outline-none">
+                <span class="relative z-10">+ Add to cart</span>
+                <span class="absolute inset-0 bg-black opacity-10 group-hover:opacity-20 transition-opacity"></span>
+            </button>
+        </div>
+    </div>
+</div>
+`;
             grid.appendChild(card);
         });
         div.appendChild(grid);

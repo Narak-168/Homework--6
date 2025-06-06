@@ -1,17 +1,20 @@
+/** @format */
+
 export function Header(): HTMLElement {
-  const header = document.createElement('header');
-  header.className = 'bg-blue-900 text-white';
-  header.innerHTML = `
+	const header = document.createElement("header");
+	header.className = "bg-[#4f39f6] text-white";
+	header.innerHTML = `
     <!-- Header Section -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
             <div class="flex items-center justify-between">
                 <!-- Logo Section -->
                 <div class="flex-shrink-0">
-                    <a href="/" class="text-2xl font-bold">Tailwind </a>
+                    <a href="/" class="text-2xl font-bold">Homework06 </a>
                 </div>
 
                 <!-- Navigation Menu -->
                 <nav class="hidden md:flex space-x-10 text-lg">
+                    <a href="/home" data-link class="hover:text-gray-300 transition-all">Home</a>
                     <a href="/service" data-link class="hover:text-gray-300 transition-all">Services</a>
                     <a href="/about" data-link class="hover:text-gray-300 transition-all">About Us</a>
                     <a href="/contact" data-link class="hover:text-gray-300 transition-all">Contact</a>
@@ -19,7 +22,7 @@ export function Header(): HTMLElement {
 
                 <!-- Call-to-Action Button -->
                 <div class="hidden md:block">
-                    <a href="#contact" class="bg-yellow-500 hover:bg-yellow-400 text-black py-2 px-6 rounded-full text-lg transition-all">
+                    <a href="#contact" class="bg-white hover:bg-gray-300 text-[#4f39f6] py-2 px-6 rounded-full text-lg transition-all">
                         Get in Touch
                     </a>
                 </div>
@@ -45,15 +48,17 @@ export function Header(): HTMLElement {
     
   `;
 
-  // Mobile Menu Toggle
-  const menuButton = header.querySelector('#menu-button') as HTMLButtonElement | null;
-  const mobileMenu = header.querySelector('#mobile-menu') as HTMLElement | null;
+	// Mobile Menu Toggle
+	const menuButton = header.querySelector(
+		"#menu-button"
+	) as HTMLButtonElement | null;
+	const mobileMenu = header.querySelector("#mobile-menu") as HTMLElement | null;
 
-  if (menuButton && mobileMenu) {
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-  }
+	if (menuButton && mobileMenu) {
+		menuButton.addEventListener("click", () => {
+			mobileMenu.classList.toggle("hidden");
+		});
+	}
 
-  return header;
+	return header;
 }
