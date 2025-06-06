@@ -668,12 +668,11 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"gH3Lb":[function(require,module,exports,__globalThis) {
 var _router = require("./router");
-var _indexCss = require("./index.css");
 document.addEventListener('DOMContentLoaded', ()=>{
     (0, _router.initRouter)();
 });
 
-},{"./router":"4wVP1","./index.css":"irmnC"}],"4wVP1":[function(require,module,exports,__globalThis) {
+},{"./router":"4wVP1"}],"4wVP1":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initRouter", ()=>initRouter);
@@ -1771,6 +1770,6 @@ function renderService() {
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"irmnC":[function() {},{}]},["3dtlh","gH3Lb"], "gH3Lb", "parcelRequire1868", {})
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["3dtlh","gH3Lb"], "gH3Lb", "parcelRequire1868", {})
 
 //# sourceMappingURL=typescript-manual.34df32e0.js.map
